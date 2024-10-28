@@ -18,7 +18,7 @@ async def service_order_audio(
 
 @router.post("/serviceOrder/text")
 async def service_order_text(
-    data: ServiceOrderData = Body(...), current_user: User = Depends(get_current_user)
+    data: ServiceOrderData = Body(...)#, current_user: User = Depends(get_current_user)
 ):
     equipment_data = fillServiceOrder(data.orderText)
     # Salvar equipment_data no banco de dados, se necessário

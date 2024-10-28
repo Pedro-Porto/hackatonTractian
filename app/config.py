@@ -3,4 +3,4 @@
 SECRET_KEY = "your_secret_key_here"  # Substitua por uma chave secreta segura
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
-DATABASE_URL = "mongodb://localhost:27017/yourdb"  # Substitua pela URL do seu MongoDB
+DATABASE_URL = "mongodb+srv://doadmin:y2hA6U08L43Y91iE@mongodb-hackaton-tractian-49ff515d.mongo.ondigitalocean.com/admin?tls=true&authSource=admin"

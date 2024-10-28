@@ -4,7 +4,9 @@ from pymongo import MongoClient
 from app.config import DATABASE_URL
 
 client = MongoClient(DATABASE_URL)
-db = client.get_default_database()
+db = client.main
+
+print(client.list_database_names())
 
 # Definir as coleções
 users_collection = db.users

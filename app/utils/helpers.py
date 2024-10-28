@@ -21,14 +21,22 @@ def listIssuesAndMachines(orderText: str) -> EquipmentData:
     return equipment_data
 
 def listTools(equipmentData: EquipmentData) -> EquipmentData:
-    # Adiciona a lista de ferramentas com seus schedules
-    # Implementação de exemplo
+    # Importar a coleção tools_collection
+    from app.database import tools_collection
+
+    # Obter a lista de ferramentas da coleção 'tools'
+    tools_list = list(tools_collection.find({}))
+
+    print('.......', tools_list)
+    
+    # Mapear os dados para o formato esperado em equipmentData.tools
     equipmentData.tools = [
         {
-            "toolName": "Tool A",
-            "sapCode": "SAP123",
-            "schedule": []
+            "toolName": tool.get("toolName"),
+            "sapCode": tool.get("sapCode"),
+            "schedule": tool.get("schedule", [])
         }
+        for tool in tools_list
     ]
     return equipmentData
 
