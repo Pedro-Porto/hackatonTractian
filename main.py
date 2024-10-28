@@ -294,6 +294,7 @@ MongoDB:
 
 EquipmentData:
 {
+    date: datetime,
     tools: [
         {toolName: "", sapCode: "", schedule: [
             {

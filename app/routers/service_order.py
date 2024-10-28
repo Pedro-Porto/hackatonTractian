@@ -9,11 +9,10 @@ router = APIRouter()
 
 @router.post("/serviceOrder/audio")
 async def service_order_audio(
-    file: UploadFile = File(...), current_user: User = Depends(get_current_user)
+    file: UploadFile = File(...)#, current_user: User = Depends(get_current_user)
 ):
-    order_text = ""  # Lógica para processar o áudio
+    order_text = "" 
     equipment_data = fillServiceOrder(order_text)
-    # Salvar equipment_data no banco de dados, se necessário
     return equipment_data
 
 @router.post("/serviceOrder/text")
@@ -21,5 +20,5 @@ async def service_order_text(
     data: ServiceOrderData = Body(...)#, current_user: User = Depends(get_current_user)
 ):
     equipment_data = fillServiceOrder(data.orderText)
-    # Salvar equipment_data no banco de dados, se necessário
+
     return equipment_data

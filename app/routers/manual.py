@@ -1,5 +1,3 @@
-# app/routers/manual.py
-
 from fastapi import APIRouter, Depends, Query
 from app.models import User
 from app.auth.auth import get_current_user

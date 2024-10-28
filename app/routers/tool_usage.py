@@ -12,10 +12,7 @@ router = APIRouter()
 async def tool_usage(
     data: List[ToolUsage] = Body(...), current_user: User = Depends(get_current_user)
 ):
-    # Atualizar a disponibilidade das ferramentas no servidor e adicionar nas ordens
-    # Implementação de exemplo
     for usage in data:
-        # Atualizar o schedule da ferramenta no banco de dados
         tools_collection.update_one(
             {"sapCode": usage.toolCode},
             {"$push": {"schedule": {

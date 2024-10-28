@@ -1,4 +1,3 @@
-# app/auth/auth.py
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from datetime import datetime, timedelta

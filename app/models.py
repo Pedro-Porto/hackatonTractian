@@ -1,13 +1,15 @@
-# app/models.py
+from dataclasses import dataclass, field
 
 from pydantic import BaseModel
 from datetime import datetime
 from typing import List, Optional
 
-# Modelos para autenticação
+
+
 class Token(BaseModel):
     access_token: str
     token_type: str
+
 
 class TokenData(BaseModel):
     username: Optional[str] = None
@@ -19,7 +21,7 @@ class User(BaseModel):
 class UserInDB(User):
     hashed_password: str
 
-# Outros modelos
+
 class Schedule(BaseModel):
     startTime: datetime
     endTime: datetime
