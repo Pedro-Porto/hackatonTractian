@@ -1,1 +1,5 @@
-front/
+
+
+node_modules/
+
+*.pyc

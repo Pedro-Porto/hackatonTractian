@@ -6,7 +6,7 @@ import pandas as pd
 from typing import List
 import json
 
-from app.models import EquipmentData
+from app.models import EquipmentData, MachineList, Tool, ToolList
 
 
 from dataclasses import asdict, is_dataclass
@@ -73,6 +73,8 @@ def listTools(equipmentData: EquipmentData) -> EquipmentData:
         }
         for tool in tools_list
     ]
+
+    print('................', equipmentData)
     return equipmentData
 
 ####################3
@@ -175,7 +177,8 @@ def fillServiceOrder(orderText: str) -> EquipmentData:
     equipment_data = listIssuesAndMachines(orderText)
     equipment_data = listTools(equipment_data)
     equipment_data = findTools(equipment_data)
-    # print(equipment_data)
+    equipment_data = listTools(equipment_data)
+    print('---->', equipment_data)
     addUserOrder(equipment_data)
 
     return equipment_data
