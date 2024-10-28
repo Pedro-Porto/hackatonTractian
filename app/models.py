@@ -32,6 +32,9 @@ class Tool(BaseModel):
     sapCode: str
     schedule: List[Schedule]
 
+class ToolList(BaseModel):
+    list_of_tools: List[str]
+
 class Issue(BaseModel):
     number: int
     issue: str
@@ -42,9 +45,13 @@ class Machine(BaseModel):
     machineId: int
     issues: List[Issue]
 
+class MachineList(BaseModel):
+    machine_list: List[Machine]
+
 class EquipmentData(BaseModel):
     tools: List[Tool]
-    machines: List[Machine]
+    #machines: List[Machine]
+    machines: MachineList
 
 class ServiceOrderData(BaseModel):
     orderText: str
