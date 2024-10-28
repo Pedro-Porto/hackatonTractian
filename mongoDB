@@ -1,0 +1,70 @@
+
+MongoDB:
+
+EquipmentData:
+{
+    tools: [
+        {toolName: "", sapCode: "", schedule: [
+            {
+                startTime: datetime,
+                endTime: datetime,
+                user: ""
+            }
+        ]}
+    ]
+
+
+    machines: [
+        {
+            machineName: "aaaa",
+            machineId: 123,
+            issues: [
+                {number: 1, issue: "aaaaa", toolsCode: ["", ""]},
+                {number: 2, issue: "aaaaa", toolsCode: ["", ""]},
+            ]
+        }
+    ]
+
+}
+
+
+collection: users
+{
+    username: "",
+    hashed_password: "",
+    disabled: bool
+}
+collection: orders
+{
+    username: "",
+    orders: [
+        {
+            order: EquipmentData, #sem campo tools
+            done: bool
+        }
+    ]
+}
+
+collection: tools
+{
+    toolName: "",
+    sapCode: "",
+    category: "",
+    schedule: [
+        {
+            startTime: datetime,
+            endTime: datetime,
+            user: ""
+        }
+    ]
+    
+}
+
+collection: manuals
+[
+    {
+        name: "",
+        path: ""
+    }
+]
+
